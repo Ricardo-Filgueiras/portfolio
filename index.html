@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Profissional - Seu Nome</title>
+    
+    <!-- 1. Carregar Tailwind CSS (Conforme REQUIREMENTS.md) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Carregar Fonte 'Inter' (Conforme REQUIREMENTS.md) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- 3. Ícones (Feather Icons) para links e botões -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Configuração do Tailwind e Estilos Personalizados -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'], // Define 'Inter' como fonte padrão
+                    },
+                    colors: {
+                        'brand-green': '#34D399', // Verde-limão inspirado no exemplo
+                        'dark-bg': '#111827',     // Fundo escuro principal (Gray 900)
+                        'dark-card': '#1F2937',   // Fundo dos cards (Gray 800)
+                        'dark-text': '#E5E7EB',   // Texto claro (Gray 200)
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            },
+            darkMode: 'class', // Habilita o modo escuro (embora o design seja dark por padrão)
+        }
+    </script>
+    
+    <!-- Estilos CSS personalizados (Conforme AGENTS.md - fallback ou adições) -->
+    <style>
+        /* Estilo para a barra de rolagem (opcional, mas melhora a estética dark) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1F2937; /* dark-card */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151; /* Gray 700 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4B5563; /* Gray 600 */
+        }
+
+        /* * CLASSE REMOVIDA PARA GARANTIR VISIBILIDADE 
+        * .animated-section { opacity: 0; }
+        */
+    </style>
+</head>
+
+<body class="bg-dark-bg text-dark-text font-sans antialiased">
+
+    <!-- ==== NAVEGAÇÃO / CABEÇALHO ==== -->
+    <!-- (Conforme CONTEXT.md - Cabeçalho) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/70 backdrop-blur-md border-b border-gray-700/50">
+        <nav class="container mx-auto max-w-5xl px-6 py-4 flex justify-between items-center">
+            <!-- Logo ou Nome -->
+            <a href="#" class="text-xl font-bold text-white transition-colors hover:text-brand-green">
+                Seu Nome Completo
+            </a>
+            
+            <!-- Links de Navegação -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#projects" class="text-gray-300 transition-colors hover:text-brand-green">Projetos</a>
+                <a href="#links" class="text-gray-300 transition-colors hover:text-brand-green">Links</a>
+                <a href="#contact" class="text-gray-300 transition-colors hover:text-brand-green">Contato</a>
+            </div>
+            
+            <!-- Botão de Contato (CTA) -->
+            <a href="#contact" class="hidden md:inline-block px-5 py-2 bg-brand-green text-dark-bg font-medium rounded-lg shadow-lg transition-transform hover:scale-105">
+                Contato
+            </a>
+            
+            <!-- Menu Mobile (Placeholder) -->
+            <button class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ==== SEÇÃO HERO (PRINCIPAL) ==== -->
+    <main class="pt-48 pb-16">
+        <section id="hero" class="container mx-auto max-w-5xl px-6 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                
+                <!-- Coluna de Texto -->
+                <!-- REMOVIDO: class="animated-section" e style="animation-delay: 100ms;" -->
+                <div class="md:w-2/3 space-y-5">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                        Analista de Dados  <br>
+                        <span class="text-brand-green">Especialista em IA</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 max-w-xl mx-auto md:mx-0">
+                        <!-- (Conforme CONTEXT.md - Cabeçalho: breve descrição) -->
+                        Apaixonado por criar soluções escaláveis usando as últimas tecnologias de frontend e backend.
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4 pt-4">
+                        <a href="#projects" class="px-6 py-3 bg-brand-green text-dark-bg font-bold rounded-lg shadow-lg transition-transform hover:scale-105">
+                            Ver Projetos
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Coluna da Foto -->
+                <!-- REMOVIDO: class="animated-section" e style="animation-delay: 300ms;" -->
+                <div class="md:w-1/3">
+                    <img src="src/images/perfil.png" 
+                         alt="Foto de [Seu Nome Completo]"
+                         class="rounded-full shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-dark-card mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== SEÇÃO PROJETOS ==== -->
+        <!-- REMOVIDO: class="animated-section" -->
+        <section id="projects" class="py-24">
+            <div class="container mx-auto max-w-5xl px-6">
+                <h2 class="text-3xl font-bold text-center text-white mb-4">Projetos Destacados</h2>
+                <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Aqui estão alguns dos trabalhos que desenvolvi, demonstrando minhas competências em tecnologia e design.
+                </p>
+                
+                <!-- Grid de Projetos (Inspirado no Exemplo 2) -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Projeto 1 (Mock Data) -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/111827/34D399?text=AI+Chatbot" alt="Preview do Projeto AI Chatbot Integrator" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">AI Chatbot Integrator</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Integração de IA conversacional para suporte ao cliente.</p>
+                            <!-- Tecnologias (Conforme AGENTS.md - ES Modules, e CONTEXT.md - Projetos) -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Python</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Flask</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Gemini API</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver Estudo de Caso <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 2 (Mock Data) -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/111827/34D399?text=E-commerce" alt="Preview do Projeto E-commerce Headless" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">E-commerce Headless</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Plataforma de vendas de alta performance.</p>
+                            <!-- Tecnologias (Conforme AGENTS.md - Tailwind) -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Next.js</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Tailwind CSS</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Strapi</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver Estudo de Caso <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 (Mock Data) -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/111827/34D399?text=Portfolio+V1" alt="Preview do Projeto Portfolio V1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Portfolio V1</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Página que demonstra minhas habilidades básicas.</p>
+                            <!-- Tecnologias (Conforme AGENTS.md - JS/CSS) -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">HTML</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">CSS</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">JavaScript</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver no GitHub <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== SEÇÃO LINKS (Blog, GitHub, etc.) ==== -->
+        <!-- REMOVIDO: class="animated-section" -->
+        <section id="links" class="py-24 bg-dark-card">
+            <div class="container mx-auto max-w-3xl px-6 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Central de Links</h2>
+                <p class="text-gray-400 mb-10">
+                    Acompanhe meu trabalho, artigos e códigos através dos meus canais profissionais.
+                </p> 
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- GitHub -->
+                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                        <i data-feather="github" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
+                        <span class="font-semibold text-white">GitHub</span>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                        <i data-feather="linkedin" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
+                        <span class="font-semibold text-white">LinkedIn</span>
+                    </a>
+                    <!-- Blog (Medium/Hashnode/etc.) -->
+                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                        <i data-feather="file-text" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
+                        <span class="font-semibold text-white">Blog</span>
+                    </a>
+                    <!-- Youtube -->
+                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                        <i data-feather="youtube" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
+                        <span class="font-semibold text-white">Youtube</span>
+                    </a>
+                    <!-- Twitter/X -->
+                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                        <i data-feather="twitter" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
+                        <span class="font-semibold text-white">Twitter</span>
+                    </a>
+                    <!-- Currículo (Download) -->
+                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                        <i data-feather="download" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
+                        <span class="font-semibold text-white">Currículo</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== SEÇÃO CONTATO ==== -->
+        <!-- REMOVIDO: class="animated-section" -->
+        <section id="contact" class="py-24">
+            <div class="container mx-auto max-w-3xl px-6 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">Vamos Conversar</h2>
+                <p class="text-gray-400 mb-10 max-w-lg mx-auto">
+                    Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para me enviar uma mensagem.
+                </p>
+                
+                <!-- Formulário de Contato -->
+                <form action="#" method="POST" class="text-left space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Seu Nome</label>
+                        <input type="text" id="name" name="name" required
+                               class="w-full px-4 py-3 bg-dark-card border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Seu E-mail</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 bg-dark-card border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required
+                                  class="w-full px-4 py-3 bg-dark-card border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"
+                                class="w-full md:w-auto px-10 py-3 bg-brand-green text-dark-bg font-bold rounded-lg shadow-lg transition-transform hover:scale-105">
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- ==== RODAPÉ ==== -->
+    <footer class="border-t border-gray-700/50">
+        <div class="container mx-auto max-w-5xl px-6 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                &copy; 2025 [Seu Nome Completo]. Todos os direitos reservados.
+            </p>
+            <div class="flex space-x-5">
+                <!-- Links Sociais do Rodapé -->
+                <a href="#" class="text-gray-400 transition-colors hover:text-brand-green"><i data-feather="github" class="w-5 h-5"></i></a>
+                <a href="#" class="text-gray-400 transition-colors hover:text-brand-green"><i data-feather="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="text-gray-400 transition-colors hover:text-brand-green"><i data-feather="twitter" class="w-5 h-5"></i></a>
+                <a href="#" class="text-gray-400 transition-colors hover:text-brand-green"><i data-feather="youtube" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==== SCRIPTS ==== -->
+    <!-- MANTIDO: O script de animação, mas ele não tem mais a função de ocultar o conteúdo inicial. -->
+    <script>
+        // 1. Substituir ícones do Feather Icons
+        feather.replace();
+
+        // 2. Animação "Fade In" ao rolar (Intersection Observer)
+        // O código de animação permanece, mas o conteúdo é visível por padrão, 
+        // então a animação apenas adicionará o efeito visual (fade-in e slide-up).
+        
+        const animatedSections = document.querySelectorAll('.animated-section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = `fadeInUp 0.6s ease-out forwards`;
+                    
+                    const delay = entry.target.style.animationDelay || '0ms';
+                    entry.target.style.animationDelay = delay;
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Este loop agora observará elementos que NÃO TEM a classe 'animated-section'
+        // Ele não terá efeito prático, mas manteremos o JS por organização.
+        // O CONTEÚDO AGORA DEVE ESTAR VISÍVEL.
+        animatedSections.forEach((section, index) => {
+            if (section.id !== 'hero') {
+                section.style.animationDelay = `${index * 100}ms`;
+            }
+            observer.observe(section);
+        });
+        
+    </script>
+</body>
+</html>
