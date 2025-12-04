@@ -45,4 +45,47 @@
 	cursor: pointer;
 }
 
+/* Microinteractions for project cards and CTAs */
+/* Targets the common card class combo used across the markup */
+.bg-dark-card.rounded-lg.shadow-xl.overflow-hidden {
+	transition: transform .18s cubic-bezier(.2,.9,.3,1), box-shadow .18s cubic-bezier(.2,.9,.3,1);
+	will-change: transform;
+}
+.bg-dark-card.rounded-lg.shadow-xl.overflow-hidden:hover {
+	transform: translateY(-6px) scale(1.02);
+}
+.bg-dark-card.rounded-lg.shadow-xl.overflow-hidden:active {
+	transform: translateY(-2px) scale(1.01);
+}
+.bg-dark-card.rounded-lg.shadow-xl.overflow-hidden:focus-within {
+	outline: none;
+	box-shadow: 0 12px 30px rgba(16,24,40,0.6);
+	transform: translateY(-8px) scale(1.03);
+}
+
+/* Smooth shadow transition for hover/focus */
+.bg-dark-card.rounded-lg.shadow-xl.overflow-hidden:hover, .bg-dark-card.rounded-lg.shadow-xl.overflow-hidden:focus-within {
+	box-shadow: 0 20px 40px rgba(2,6,23,0.6);
+}
+
+/* Make inline CTA links inside cards more button-like with subtle interaction */
+.bg-dark-card .inline-flex.items-center.font-medium {
+	transition: transform .15s ease, color .15s ease, opacity .15s ease;
+}
+.bg-dark-card .inline-flex.items-center.font-medium:hover {
+	transform: translateY(-3px);
+	color: #ffffff;
+}
+
+/* Utility class for primary buttons — easy to apply to CTAs */
+.btn-primary {
+	@apply bg-brand-green text-dark-bg font-bold rounded-lg px-4 py-2 shadow-lg transition-transform transform;
+}
+.btn-primary:hover { transform: scale(1.04); }
+
+/* Small animation for modal appearance */
+@keyframes modalFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.video-modal-backdrop > .video-modal-content { animation: modalFadeIn .16s ease; }
+
+
 
