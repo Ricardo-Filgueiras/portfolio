@@ -1,0 +1,48 @@
+/* Estilos extraídos de index.html */
+
+/* Estilo para a barra de rolagem (opcional, mas melhora a estética dark) */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: #1F2937; /* dark-card */
+}
+::-webkit-scrollbar-thumb {
+	background: #374151; /* Gray 700 */
+	border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #4B5563; /* Gray 600 */
+}
+
+/* Observação: a classe `.animated-section` foi removida no HTML para manter o conteúdo sempre visível. */
+
+/* Vídeo modal (lightbox) */
+.video-modal-backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 60;
+}
+.video-modal-content {
+	width: 90%;
+	max-width: 960px;
+	background: transparent;
+	border-radius: 8px;
+}
+.video-modal-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	background: rgba(0,0,0,0.6);
+	color: #fff;
+	border: none;
+	padding: 6px 8px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+

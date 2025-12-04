@@ -16,56 +16,11 @@
     <!-- 3. Ícones (Feather Icons) para links e botões -->
     <script src="https://unpkg.com/feather-icons"></script>
 
-    <!-- Configuração do Tailwind e Estilos Personalizados -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'sans-serif'], // Define 'Inter' como fonte padrão
-                    },
-                    colors: {
-                        'brand-green': '#34D399', // Verde-limão inspirado no exemplo
-                        'dark-bg': '#111827',     // Fundo escuro principal (Gray 900)
-                        'dark-card': '#1F2937',   // Fundo dos cards (Gray 800)
-                        'dark-text': '#E5E7EB',   // Texto claro (Gray 200)
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                    }
-                }
-            },
-            darkMode: 'class', // Habilita o modo escuro (embora o design seja dark por padrão)
-        }
-    </script>
-    
-    <!-- Estilos CSS personalizados (Conforme AGENTS.md - fallback ou adições) -->
-    <style>
-        /* Estilo para a barra de rolagem (opcional, mas melhora a estética dark) */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1F2937; /* dark-card */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #374151; /* Gray 700 */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #4B5563; /* Gray 600 */
-        }
+    <!-- Configuração do Tailwind (arquivo externo) -->
+    <script src="src/javascript/tailwind-config.js"></script>
 
-        /* * CLASSE REMOVIDA PARA GARANTIR VISIBILIDADE 
-        * .animated-section { opacity: 0; }
-        */
-    </style>
+    <!-- Estilos CSS personalizados -->
+    <link rel="stylesheet" href="src/styles/style.css">
 </head>
 
 <body class="bg-dark-bg text-dark-text font-sans antialiased">
@@ -131,6 +86,95 @@
             </div>
         </section>
 
+                <!-- ==== ADICIONAIS: Analista EBAC e Casos de Uso AI (Vídeos) ==== -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <!-- Analista EBAC -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <img src="https://placehold.co/600x400/111827/34D399?text=Analista+EBAC" alt="Analista de Dados EBAC" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Analista de Dados - EBAC</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Curso prático cobrindo Python, SQL e tópicos de Big Data aplicados à análise de dados.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Python</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">AWS</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">SQL</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Telegram Bots</span>
+                            </div>
+                            <a href="https://github.com/Ricardo-Filgueiras/Analista-de-dados-ebac" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver no GitHub <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AI Video: Whisk Labs -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <div class="relative">
+                            <img src="https://img.youtube.com/vi/iiqFbGzBG3k/hqdefault.jpg" alt="Whisk Labs - Thumbnail" class="w-full h-48 object-cover">
+                            <button data-video-url="https://www.youtube.com/watch?v=iiqFbGzBG3k" class="youtube-thumb absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity" aria-label="Assistir Whisk Labs no YouTube">
+                                <i data-feather="play-circle" class="w-12 h-12 text-white"></i>
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Whisk Labs - Casos de Uso AI</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Demonstração de aplicação de agentes e workflows de IA.</p>
+                            <a href="https://youtu.be/iiqFbGzBG3k" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver no YouTube <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AI Video: Gemini Criandos 'GEM' -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <div class="relative">
+                            <img src="https://img.youtube.com/vi/r_DCwsU74C0/hqdefault.jpg" alt="Gemini GEM - Thumbnail" class="w-full h-48 object-cover">
+                            <button data-video-url="https://www.youtube.com/watch?v=r_DCwsU74C0" class="youtube-thumb absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity" aria-label="Assistir Gemini GEM no YouTube">
+                                <i data-feather="play-circle" class="w-12 h-12 text-white"></i>
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Gemini Criandos 'GEM'</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Explorações com Gemini e integrações criativas em IA.</p>
+                            <a href="https://youtu.be/r_DCwsU74C0" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver no YouTube <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AI Video: Google Gemini CLI -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <div class="relative">
+                            <img src="https://img.youtube.com/vi/Wkdw8GNGFPo/hqdefault.jpg" alt="Google Gemini CLI - Thumbnail" class="w-full h-48 object-cover">
+                            <button data-video-url="https://www.youtube.com/watch?v=Wkdw8GNGFPo" class="youtube-thumb absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity" aria-label="Assistir Google Gemini CLI no YouTube">
+                                <i data-feather="play-circle" class="w-12 h-12 text-white"></i>
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Google Gemini CLI</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Demo e uso do Google Gemini via linha de comando.</p>
+                            <a href="https://youtu.be/Wkdw8GNGFPo" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver no YouTube <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Designing Dashboard (Power BI & Figma) -->
+                    <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
+                        <div class="relative">
+                            <img src="https://img.youtube.com/vi/gOZwKwzYl8Y/hqdefault.jpg" alt="Designing a Dashboard - Thumbnail" class="w-full h-48 object-cover">
+                            <button data-video-url="https://www.youtube.com/watch?v=gOZwKwzYl8Y" class="youtube-thumb absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity" aria-label="Assistir Designing a Dashboard no YouTube">
+                                <i data-feather="play-circle" class="w-12 h-12 text-white"></i>
+                            </button>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Designing a Dashboard (Power BI + Figma)</h3>
+                            <p class="text-gray-300 mb-4 text-sm">Processo de design para dashboards interativos usando Power BI e Figma.</p>
+                            <a href="https://youtu.be/gOZwKwzYl8Y" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                Ver no YouTube <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
         <!-- ==== SEÇÃO PROJETOS ==== -->
         <!-- REMOVIDO: class="animated-section" -->
         <section id="projects" class="py-24">
@@ -165,18 +209,31 @@
 
                     <!-- Projeto 4 -->
                     <div class="bg-dark-card rounded-lg shadow-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl">
-                        <img src="https://placehold.co/600x400/111827/34D399?text=Opuline" alt="Preview do Projeto Opuline" class="w-full h-48 object-cover">
+                        <div class="relative">
+                            <img src="https://img.youtube.com/vi/DA2tdqStr0Q/hqdefault.jpg" alt="Opuline - Thumbnail" class="w-full h-48 object-cover">
+                            <button data-video-url="https://www.youtube.com/watch?v=DA2tdqStr0Q" class="youtube-thumb absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 hover:opacity-100 transition-opacity" aria-label="Assistir Opuline no YouTube">
+                                <i data-feather="play-circle" class="w-12 h-12 text-white"></i>
+                            </button>
+                        </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-white mb-2">Projeto Opuline</h3>
-                            <p class="text-gray-300 mb-4 text-sm">Análise de dados e transformação data-driven.</p>
+                            <p class="text-gray-300 mb-4 text-sm">Análise de Dados e Transformação Data Driven.</p>
                             <div class="flex flex-wrap gap-2 mb-6">
                                 <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">SQL</span>
+                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Power BI</span>
                                 <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Python</span>
-                                <span class="text-xs font-medium bg-brand-green/20 text-brand-green px-3 py-1 rounded-full">Looker Studio</span>
                             </div>
-                            <span class="inline-flex items-center font-medium text-gray-400">
-                                Em Breve <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
-                            </span>
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2">
+                                <a href="https://github.com/Ricardo-Filgueiras/Projeto-Opuline-AnaliseDados" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                    Ver no GitHub <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </a>
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiZDg1NTkwYWMtMzYwNi00Yzc1LTlkZTMtNWU4MWMzYTg2YzkyIiwidCI6ImVhNmIyNzRlLTE4MmYtNDc0Yy04YWMwLTQzOWM5ZTE1Yjg3ZSJ9" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                    Ver no Power BI <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </a>
+                                <a href="https://youtu.be/DA2tdqStr0Q" target="_blank" class="inline-flex items-center font-medium text-brand-green transition-colors hover:text-white">
+                                    Ver no YouTube <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -254,7 +311,7 @@
                         <span class="font-semibold text-white">GitHub</span>
                     </a>
                     <!-- LinkedIn -->
-                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                    <a href="https://www.linkedin.com/in/ricardo-filgueiras-b4607b232/" target="_blank" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
                         <i data-feather="linkedin" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
                         <span class="font-semibold text-white">LinkedIn</span>
                     </a>
@@ -264,7 +321,7 @@
                         <span class="font-semibold text-white">Blog</span>
                     </a>
                     <!-- Youtube -->
-                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                    <a href="https://youtube.com/@ricardofilgueiras_datascience?si=TtABXJ4y2qi8hkjT" target="_blank" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
                         <i data-feather="youtube" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
                         <span class="font-semibold text-white">Youtube</span>
                     </a>
@@ -274,7 +331,7 @@
                         <span class="font-semibold text-white">Twitter</span>
                     </a>
                     <!-- Currículo (Download) -->
-                    <a href="#" class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
+                    <a href="assets/Ricardo%20Profile.pdf" download class="group bg-gray-900/50 p-6 rounded-lg border border-gray-700/50 transition-all hover:bg-gray-700 hover:border-brand-green">
                         <i data-feather="download" class="w-10 h-10 mx-auto mb-3 text-gray-400 transition-colors group-hover:text-brand-green"></i>
                         <span class="font-semibold text-white">Currículo</span>
                     </a>
@@ -337,42 +394,6 @@
     </footer>
 
     <!-- ==== SCRIPTS ==== -->
-    <!-- MANTIDO: O script de animação, mas ele não tem mais a função de ocultar o conteúdo inicial. -->
-    <script>
-        // 1. Substituir ícones do Feather Icons
-        feather.replace();
-
-        // 2. Animação "Fade In" ao rolar (Intersection Observer)
-        // O código de animação permanece, mas o conteúdo é visível por padrão, 
-        // então a animação apenas adicionará o efeito visual (fade-in e slide-up).
-        
-        const animatedSections = document.querySelectorAll('.animated-section');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = `fadeInUp 0.6s ease-out forwards`;
-                    
-                    const delay = entry.target.style.animationDelay || '0ms';
-                    entry.target.style.animationDelay = delay;
-
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        // Este loop agora observará elementos que NÃO TEM a classe 'animated-section'
-        // Ele não terá efeito prático, mas manteremos o JS por organização.
-        // O CONTEÚDO AGORA DEVE ESTAR VISÍVEL.
-        animatedSections.forEach((section, index) => {
-            if (section.id !== 'hero') {
-                section.style.animationDelay = `${index * 100}ms`;
-            }
-            observer.observe(section);
-        });
-        
-    </script>
+    <script src="src/javascript/script.js"></script>
 </body>
 </html>
